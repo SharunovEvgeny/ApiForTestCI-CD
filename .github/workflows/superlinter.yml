@@ -1,4 +1,7 @@
 name: TestCICD
+env:
+  APPLICATIONS_NAME: "MyDjango"
+  DEPLOY_PACKAGE_NAME: "dgango-deploy-ver-${{ github.sha }}
 
 # Run this workflow every time a new commit pushed to your repository
 on:
@@ -13,6 +16,11 @@ jobs:
     steps:
       - name: Print Hello Message
         run : echo "Hello World from Test"
+      - name: Execure few commands
+        run: |
+          echo "Hello Message1"
+          echo "Hellow Message2"
+          echo "Applications name: ${{ env.APPLICATIONS_NAME }}
   my_deploy:
     name: HelloDeploy
     runs-on: ubuntu-latest
@@ -20,5 +28,10 @@ jobs:
     steps:
       - name: Print Hello Message
         run : echo "Hello World from Deploy"
+        - name: Execure few commands
+        run: |
+          echo "Hello Message1"
+          echo "Hellow Message2"
+          echo "Applications name: ${{ env.DEPLOY_PACKAGE_NAME }}
     
   
