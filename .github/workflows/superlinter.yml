@@ -18,10 +18,7 @@ jobs:
         run : echo "Hello World from Test"
         
       - name: Execure few commands
-        run : |
-          echo "Hello Message1"
-          echo "Hellow Message2"
-          echo "Applications name: ${{ env.APPLICATIONS_NAME }}"
+        run : echo "Applications name: ${{ env.APPLICATIONS_NAME }}"
   my_deploy:
     name: HelloDeploy
     runs-on: ubuntu-latest
