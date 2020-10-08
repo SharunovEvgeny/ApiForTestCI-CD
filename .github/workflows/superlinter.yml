@@ -16,11 +16,12 @@ jobs:
     steps:
       - name: Print Hello Message
         run : echo "Hello World from Test"
+        
       - name: Execure few commands
         run : |
           echo "Hello Message1"
           echo "Hellow Message2"
-          echo "Applications name: ${{ env.APPLICATIONS_NAME }}
+          echo "Applications name: ${{ env.APPLICATIONS_NAME }}"
   my_deploy:
     name: HelloDeploy
     runs-on: ubuntu-latest
@@ -28,10 +29,11 @@ jobs:
     steps:
       - name: Print Hello Message
         run : echo "Hello World from Deploy"
+        
       - name: Execure few commands
         run: |
           echo "Hello Message1"
           echo "Hellow Message2"
-          echo "Applications name: ${{ env.DEPLOY_PACKAGE_NAME }}
+          echo "Applications name: ${{ env.DEPLOY_PACKAGE_NAME }}"
     
   
