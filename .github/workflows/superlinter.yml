@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Execure few commandsTester
-        run : echo "Applications name: ${{ env.APPLICATIONS_NAME }}"
+        run : echo "Hi"
   my_deploy:
     name: HelloDeploy
     runs-on: ubuntu-latest
