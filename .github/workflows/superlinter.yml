@@ -14,9 +14,6 @@ jobs:
     name: HelloTest
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello Message TESt
-        run : echo "Hello World from Test"
-        
       - name: Execure few commands
         run : echo "Applications name: ${{ env.APPLICATIONS_NAME }}"
   my_deploy:
