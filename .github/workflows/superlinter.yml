@@ -1,7 +1,5 @@
 name: TestCICD
-env:
-  APPLICATIONS_NAME: "MyDjango"
-  DEPLOY_PACKAGE_NAME: "dgango-deploy-ver-${{ github.sha }}
+
 
 # Run this workflow every time a new commit pushed to your repository
 on:
@@ -15,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Execure few commandsTester
-        run : echo "Hi"
+      run : echo "Hi"
   my_deploy:
     name: HelloDeploy
     runs-on: ubuntu-latest
