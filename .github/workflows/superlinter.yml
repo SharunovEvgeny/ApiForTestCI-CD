@@ -30,7 +30,7 @@ jobs:
         run: ls -la
         
       - name: Check python
-        run: python3 -version
+        run: python3 --version
   my_deploy:
     name: HelloDeploy
     runs-on: ubuntu-latest
