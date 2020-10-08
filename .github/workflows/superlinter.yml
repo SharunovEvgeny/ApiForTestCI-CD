@@ -17,7 +17,7 @@ jobs:
       - name: Print Hello Message
         run : echo "Hello World from Test"
       - name: Execure few commands
-        run: |
+        run : |
           echo "Hello Message1"
           echo "Hellow Message2"
           echo "Applications name: ${{ env.APPLICATIONS_NAME }}
@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Print Hello Message
         run : echo "Hello World from Deploy"
-        - name: Execure few commands
+      - name: Execure few commands
         run: |
           echo "Hello Message1"
           echo "Hellow Message2"
