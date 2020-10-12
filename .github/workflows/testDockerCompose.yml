@@ -34,7 +34,7 @@ jobs:
         uses: wshihadeh/docker-deployment-action@v1
         with:
           remote_docker_host: root@45.144.64.69
-          sssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+          ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
           ssh_public_key: ~/.ssh/known_hosts
           deployment_mode: docker-compose
           deploy_path: /root/my-deployment
