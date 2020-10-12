@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello MessageTEdfddvfsfdft
-        run : echo "dfdfdsfd"
+        run : echo "dfdfdfddsfd"
         
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
