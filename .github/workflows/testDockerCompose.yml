@@ -20,8 +20,6 @@ jobs:
           echo "${{ secrets.DOCKER_SSH_PRIVATE_KEY }}" > ~/.ssh/private.key
           sudo chmod 600 ~/.ssh/private.key
           echo "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" > ~/.ssh/known_hosts
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          ssh-keyscan git.eu.s5y.io >> ~/.ssh/known_hosts
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/private.key root@45.144.64.69 -tt "echo test > testfile1"
           cat ~/.ssh/known_hosts
           ls ~/.ssh/
