@@ -17,7 +17,6 @@ jobs:
       - name: Print Hello Messadwddddgrgfgfdvfsfdft
         run : |
           echo "dfdfdfddgffgfsfd"
-          sudo rm /etc/ssh/ssh_known_hosts
         
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
