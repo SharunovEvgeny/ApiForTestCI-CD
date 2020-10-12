@@ -23,19 +23,7 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           ssh-keyscan git.eu.s5y.io >> ~/.ssh/known_hosts
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/private.key root@45.144.64.69 -tt "echo test > testfile1"
-          
-      - name: "Prepare SSH key and known hosts"
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.DOCKER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          ssh-keyscan git.eu.s5y.io >> ~/.ssh/known_hosts
-          echo "ssh-keygen"
-          ssh-keygen -y -e -f ~/.ssh/id_rsa
-          echo "ssh-keyscan"
-          ssh-keyscan 45.144.64.69
-          ssh -i ~/.ssh/id_rsa -o UserKnownHostsFile=/github/home/.ssh/known_hosts -tt root@45.144.64.69 "echo test > testfile1"
+          cat ~/.ssh/known_hosts
       - name: Print Hello Messadwddddgrffgfgfdvfsfdft
         run : |
           echo "dfdfdfddgffgfsffggdfdса"
