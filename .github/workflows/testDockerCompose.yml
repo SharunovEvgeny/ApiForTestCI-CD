@@ -15,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello Messadwddddgrgfgfdvfsfdft
-        run : echo "dfdfdfddgffgfsfd"
+        run : |
+          echo "dfdfdfddgffgfsfd"
+          ssh-keygen -f "/github/home/.ssh/known_hosts" -R 45.144.64.69
         
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
