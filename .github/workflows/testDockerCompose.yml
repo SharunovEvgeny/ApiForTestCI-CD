@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Test"
-        run: ssh root@45.144.64.69
+        run: ssh root@45.144.64.69 -tt
       - name: "Prepare SSH key and known hosts"
         run: |
           mkdir -p ~/.ssh
