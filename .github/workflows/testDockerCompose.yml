@@ -17,7 +17,7 @@ jobs:
       - name: Print Hello Messadwddddgrgfgfdvfsfdft
         run : |
           echo "dfdfdfddgffgfsfd"
-          sudo ssh-keygen -f "/etc/ssh/ssh_known_hosts" -R 45.144.64.69
+          sudo cat -f "/etc/ssh/ssh_known_hosts"
         
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
