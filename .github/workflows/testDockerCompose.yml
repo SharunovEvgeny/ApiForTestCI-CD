@@ -15,7 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Hello MessageTEdfddvfsfdft
-        run : ssh-keygen -f "etc/ssh/ssh_known_hosts" -R "45.144.64.69"
+        run : |
+          cd etc/ssh
+          ls
         
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
