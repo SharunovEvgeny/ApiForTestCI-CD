@@ -14,7 +14,7 @@ jobs:
     name: HelloTest
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello MessageTEdfddvfsfdft
+      - name: Print Hello MessageTcdEdfddvfsfdft
         run : echo "dfdfdfddsfd"
         
       - name: Deploy to Docker Host
