@@ -17,13 +17,10 @@ jobs:
       - name: Create SSH key
         run: |
           mkdir -p ~/.ssh/
-          echo "$DOCKER_SSH_PRIVATE_KEY" > ../private.key
+          echo "${{ secrets.DOCKER_SSH_PRIVATE_KEY }}" > ../private.key
           sudo chmod 600 ../private.key
-          echo "$DOCKER_SSH_PUBLIC_KEY" > ~/.ssh/known_hosts
+          echo "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" > ~/.ssh/known_hosts
         shell: bash
-        env:
-          SSH_PRIVATE_KEY: ${{secrets.DOCKER_SSH_PRIVATE_KEY}}
-          SSH_KNOWN_HOSTS: ${{secrets.DOCKER_SSH_PUBLIC_KEY}}
       - name: Print Hello Messadwddddgrffgfgfdvfsfdft
         run : |
           echo "dfdfdfddgffgfsffggdfdса"
