@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Print Hello Messadwddddgrffgfgfdvfsfdft
         run : |
-          echo "dfdfdfddgffgfsffggdса"
+          echo "dfdfdfddgffgfsffggdfdса"
         
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
