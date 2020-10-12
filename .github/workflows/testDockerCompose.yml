@@ -14,10 +14,19 @@ jobs:
     name: HelloTest
     runs-on: ubuntu-latest
     steps:
+      - name: Create SSH key
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$DOCKER_SSH_PRIVATE_KEY" > ../private.key
+          sudo chmod 600 ../private.key
+          echo "$DOCKER_SSH_PUBLIC_KEY" > ~/.ssh/known_hosts
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.DOCKER_SSH_PRIVATE_KEY}}
+          SSH_KNOWN_HOSTS: ${{secrets.DOCKER_SSH_PUBLIC_KEY}}
       - name: Print Hello Messadwddddgrffgfgfdvfsfdft
         run : |
           echo "dfdfdfddgffgfsffggdfdса"
-        
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
         with:
