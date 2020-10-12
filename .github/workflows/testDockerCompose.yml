@@ -23,8 +23,7 @@ jobs:
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           ssh-keyscan git.eu.s5y.io >> ~/.ssh/known_hosts
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/private.key root@45.144.64.69 -tt "echo test > testfile1"
-          sudo cat ~/.ssh/known_hosts >> /root/.ssh/known_hosts
-          sudo cat /root/.ssh/known_hosts
+          
       - name: Print Hello Messadwddddgrffgfgfdvfsfdft
         run : |
           echo "dfdfdfddgffgfsffggdfdса"
@@ -32,8 +31,8 @@ jobs:
         uses: wshihadeh/docker-deployment-action@v1
         with:
           remote_docker_host: root@45.144.64.69
-          ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
-          ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
+          ssh_private_key: ~/.ssh/private.key
+          ssh_public_key: ~/.ssh/known_hosts
           deployment_mode: docker-compose
           deploy_path: /root/my-deployment
           args: up -d
