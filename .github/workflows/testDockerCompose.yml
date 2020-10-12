@@ -18,7 +18,6 @@ jobs:
         run : |
           echo "dfdfdfddgffgfsfd"
           sudo rm /etc/ssh/ssh_known_hosts
-          sudo cat /etc/ssh/ssh_known_hosts
         
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
