@@ -18,6 +18,7 @@ jobs:
         run : |
           echo "dfdfdfddgffgfsfd"
           sudo rm /etc/ssh/ssh_known_hosts
+          sudo cat /etc/ssh/ssh_known_hosts
         
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
@@ -31,5 +32,11 @@ jobs:
           pre_deployment_command_args: 'bundle exec rake db:migrate'
           docker_prune: 'true'
           pull_images_first: 'true'
+  my_tweest:
+    name: HelloTest2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello Messadwddddgrgfgfdvfsfdft
+        run : sudo cat /etc/ssh/ssh_known_hosts
     
   
