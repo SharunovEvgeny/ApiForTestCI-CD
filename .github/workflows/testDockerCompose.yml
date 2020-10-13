@@ -25,13 +25,6 @@ jobs:
           eval $(ssh-agent)
           ssh-add "$HOME/.ssh/id_rsa"
           echo "Add known hossts"
-          sudo echo "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}"
-          echo "TEST"
-          sudo cat $HOME/.ssh/id_rsa
-          sudo cat /etc/ssh/ssh_known_hosts
-          sudo echo "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" >> sudo /etc/ssh/ssh_known_hosts
-          echo "ADD"
-          sudo echo "ADD" >> cat /etc/ssh/ssh_known_hosts
           sudo cat /etc/ssh/ssh_known_hosts
           sudo printf '%s %s\n' "root@45.144.64.69" "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" > sudo /etc/ssh/ssh_known_hosts
           sudo cat /etc/ssh/ssh_known_hosts
@@ -39,6 +32,8 @@ jobs:
               -o UserKnownHostsFile=/dev/null \
               -o StrictHostKeyChecking=no root@45.144.64.69
           sudo scp -p /etc/ssh/ssh_known_hosts root@45.144.64.69
+          echo "hgd"
+          ssh root@45.144.64.69 -t
       - name: Print Hellosft
         run : |
           echo "dса"
