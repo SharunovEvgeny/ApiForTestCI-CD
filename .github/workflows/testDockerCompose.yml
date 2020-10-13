@@ -28,7 +28,7 @@ jobs:
               -o UserKnownHostsFile=/dev/null \
               -o StrictHostKeyChecking=no root@45.144.64.69 << 'ENDSSH'
           cd /root/my-deployment/
-          docker login docker.pkg.github.com -u SharunovEvgeny -p aefcde534bb7092307b3ae6f2caa95d8d4058890
+          docker login docker.pkg.github.com -u SharunovEvgeny -p 3edd3dfb164319d4a4d9a850d3acc9eff299e138
           docker pull docker.pkg.github.com/sharunovevgeny/apifortestci-cd/api:latest
           docker-compose up -d
           ENDSSH
