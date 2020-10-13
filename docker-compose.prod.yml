@@ -8,5 +8,3 @@ services:
     command: python manage.py runserver 0.0.0.0:80
     ports:
       - "80:80"
-    depends_on:
-      - db
