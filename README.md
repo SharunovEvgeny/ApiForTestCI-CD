@@ -1,7 +1,7 @@
 # ICQApi
 server for icq
 Status of Last Deployment:<br>
-<img src="https://github.com/SharunovEvgeny/ApiForTestCI-CD/workflows/TestCICD/badge.svg?branch=master"><br>
+<img src="https://github.com/SharunovEvgeny/ApiForTestCI-CD/workflows/TestCICD/badge.svg?branch=main"><br>
 
 
 
