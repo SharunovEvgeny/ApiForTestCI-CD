@@ -46,6 +46,5 @@ jobs:
           docker login docker.pkg.github.com -u SharunovEvgeny -p ${{ secrets.GITHUB_TOKEN }}
           docker pull docker.pkg.github.com/sharunovevgeny/apifortestci-cd/api:latest
           docker-compose -f docker-compose.prod.yml up -d
-      - name: Delete old Images
-        run: docker rmi $(docker images -f dangling=true -q)
+          run: docker rmi $(docker images -f dangling=true -q)
           ENDSSH
