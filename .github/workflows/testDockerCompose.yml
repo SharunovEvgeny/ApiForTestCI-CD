@@ -17,15 +17,15 @@ jobs:
       - uses: actions/checkout@v1
         with:
           fetch-depth: 1
-      - name: "test"
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.DOCKER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          sudo chmod 600 ~/.ssh/id_rsa
-          echo "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" > ~/.ssh/known_hosts
-          ssh -q -t -i "$HOME/.ssh/id_rsa" \
-            -o UserKnownHostsFile=/dev/null \
-            -o StrictHostKeyChecking=no "$INPUT_REMOTE_DOCKER_HOST" root@45.144.64.69
+#       - name: "test"
+#         run: |
+#           mkdir -p ~/.ssh
+#           echo "${{ secrets.DOCKER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+#           sudo chmod 600 ~/.ssh/id_rsa
+#           echo "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" > ~/.ssh/known_hosts
+#           ssh -q -t -i "$HOME/.ssh/id_rsa" \
+#             -o UserKnownHostsFile=/dev/null \
+#             -o StrictHostKeyChecking=no "$INPUT_REMOTE_DOCKER_HOST" root@45.144.64.69
       - name: "Tf"
         run: |
           mkdir -p ~/.ssh
