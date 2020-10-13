@@ -48,7 +48,7 @@ jobs:
     name: HelloTest2
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello Messadwddddgrgfgfdvfsfdft
+      - name: Print Hellgrgfgfdvfsfdft
         run : sudo cat /etc/ssh/ssh_known_hosts
     
   
