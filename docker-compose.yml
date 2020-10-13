@@ -11,10 +11,11 @@ services:
 
   web:
     container_name: server
-    build: .
-    command: python manage.py runserver 0.0.0.0:80
+    build:
+      context: .
     volumes:
-      - .:/code
+      - /root/my-deployment:/src
+    command: python manage.py runserver 0.0.0.0:80
     ports:
       - "80:80"
     depends_on:

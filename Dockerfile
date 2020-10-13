@@ -1,7 +1,9 @@
-FROM python:3.8
-ENV PYTHONUNBUFFERED 1
-RUN mkdir /code
-WORKDIR /code
-ADD requirements.txt /code/
+FROM python:latest
+
+RUN mkdir /src
+WORKDIR /src
+COPY . /src
+
+#RUN apt-get update
+#RUN apt-get install -y poppler-utils
 RUN pip install -r requirements.txt
-ADD . /code/
