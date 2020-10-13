@@ -32,7 +32,7 @@ jobs:
               -o StrictHostKeyChecking=no root@45.144.64.69
       - name: Print Hellosft
         run : |
-          echo "dggdfdса"
+          echo "dса"
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
         with:
