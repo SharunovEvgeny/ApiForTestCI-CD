@@ -19,10 +19,13 @@ jobs:
           fetch-depth: 1
       - name: "test"
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.DOCKER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          sudo chmod 600 ~/.ssh/id_rsa
-          echo "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" > ~/.ssh/known_hosts
+          mkdir -p "$HOME/.ssh"
+          printf '%s\n' "${{ secrets.DOCKER_SSH_PRIVATE_KEY }}" > "$HOME/.ssh/id_rsa"
+          chmod 600 "$HOME/.ssh/id_rsa"
+          eval $(ssh-agent)
+          ssh-add "$HOME/.ssh/id_rsa"
+          echo "Add known hosts"
+          printf '%s %s\n' "root@45.144.64.69" "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" > /etc/ssh/ssh_known_hosts
           ssh -q -t -i "$HOME/.ssh/id_rsa" \
             -o UserKnownHostsFile=/dev/null \
             -o StrictHostKeyChecking=no root@45.144.64.69
