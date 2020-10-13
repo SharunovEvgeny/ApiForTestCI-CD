@@ -20,7 +20,7 @@ jobs:
           echo "${{ secrets.DOCKER_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           sudo chmod 600 ~/.ssh/id_rsa
           echo "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" > ~/.ssh/known_hosts
-          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_rsa root@45.144.64.69 -tt "echo test > testfile1"
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa root@45.144.64.69 -tt "echo test > testfile1"
           ssh -i ~/.ssh/id_rsa root@45.144.64.69 -tt "echo test > testfile1"
           ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub
           cat ~/.ssh/known_hosts
