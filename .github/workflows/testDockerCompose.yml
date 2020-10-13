@@ -30,7 +30,7 @@ jobs:
           ssh -q -t -i "$HOME/.ssh/id_rsa" \
             -o UserKnownHostsFile=/dev/null \
             -o StrictHostKeyChecking=no root@45.144.64.69 "$@"
-      - name: Print Hello Messadwddddgrffgfgfdvfsfdft
+      - name: Print Hello Messafsfdft
         run : |
           echo "dggdfdса"
       - name: Deploy to Docker Host
