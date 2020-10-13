@@ -29,7 +29,12 @@ jobs:
           scp  -i "$HOME/.ssh/id_rsa" -o StrictHostKeyChecking=no -r ./docker-compose.yml root@45.144.64.69:/root/my-deployment/docker-compose.yml
           ssh -q -t -i "$HOME/.ssh/id_rsa" \
               -o UserKnownHostsFile=/dev/null \
-              -o StrictHostKeyChecking=no root@45.144.64.69
+              -o StrictHostKeyChecking=no root@45.144.64.69 << 'ENDSSH'
+          cd /root/my-deployment/
+          docker login docker.pkg.github.com -u SharunovEvgeny -p 21fffe7c79fe6dce7aa3312beaf94f2fd69b67bb
+          docker pull docker.pkg.github.com/sharunovevgeny/apifortestci-cd/api:latest
+          docker-compose up -d
+          ENDSSH
       - name: Print Hellosft
         run : |
           echo "dса"
