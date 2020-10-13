@@ -27,6 +27,7 @@ jobs:
           echo "Add known hossts"
           sudo echo "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}"
           echo "TEST"
+          sudo cat $HOME/.ssh/id_rsa
           sudo cat /etc/ssh/ssh_known_hosts
           sudo echo "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" >> sudo /etc/ssh/ssh_known_hosts
           echo "ADD"
