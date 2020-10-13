@@ -31,14 +31,10 @@ jobs:
               -o UserKnownHostsFile=/dev/null \
               -o StrictHostKeyChecking=no root@45.144.64.69 << 'ENDSSH'
           cd /root/my-deployment/
-          try:
-            git clone https://github.com/SharunovEvgeny/ApiForTestCI-CD.git
-            cd ApiForTestCI-CD
-            docker-compose up --build
-          execpt:
-            cd ApiForTestCI-CD
-            git pull https://github.com/SharunovEvgeny/ApiForTestCI-CD.git
-            docker-compose up
+          git clone https://github.com/SharunovEvgeny/ApiForTestCI-CD.git
+          cd ApiForTestCI-CD
+          docker-compose up --build -d
+          git pull https://github.com/SharunovEvgeny/ApiForTestCI-CD.git
           ENDSSH
       - name: Print Hellosft
         run : |
