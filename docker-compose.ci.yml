@@ -1,4 +1,5 @@
-version: '3.7'
+version: "3.7"
+
 services:
   db:
     container_name: database
@@ -8,11 +9,13 @@ services:
     environment:
       POSTGRES_PASSWORD: example
     restart: always
-
   web:
-    container_name: server
     build:
       context: .
+      dockerfile: Dockerfile.prod
+      cache_from:
+        - docker.pkg.github.com/sharunovevgeny/apifortestci-cd/api:latest
+    image: docker.pkg.github.com/sharunovevgeny/apifortestci-cd/api:latest
     volumes:
       - /root/my-deployment:/src
     command: python manage.py runserver 0.0.0.0:80
@@ -21,12 +24,3 @@ services:
     depends_on:
       - db
     restart: always
-
-#  api:
-#    container_name: api
-#    build: .
-#    volumes:
-#      - .:/src
-#    command: python manage.py app
-#    restart: always
-

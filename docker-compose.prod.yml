@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  web:
+    image: docker.pkg.github.com/sharunovevgeny/apifortestci-cd/api:latest
+    volumes:
+      - /root/my-deployment:/src
+    command: python manage.py runserver 0.0.0.0:80
+    ports:
+      - "80:80"
+    depends_on:
+      - db
