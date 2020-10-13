@@ -38,7 +38,7 @@ jobs:
           ssh-add "$HOME/.ssh/id_rsa"
           echo "Add known hossts"
           sudo printf '%s %s\n' "root@45.144.64.69" "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" > sudo /etc/ssh/ssh_known_hosts
-          scp  -i "$HOME/.ssh/id_rsa" -o StrictHostKeyChecking=no -r ./docker-compose.prod.yml root@45.144.64.69:/root/my-deployment/docker-compose.yml
+          scp  -i "$HOME/.ssh/id_rsa" -o StrictHostKeyChecking=no -r ./docker-compose.prod.yml root@45.144.64.69:/root/my-deployment/docker-compose.prod.yml
           ssh -q -t -i "$HOME/.ssh/id_rsa" \
               -o UserKnownHostsFile=/dev/null \
               -o StrictHostKeyChecking=no root@45.144.64.69 << 'ENDSSH'
