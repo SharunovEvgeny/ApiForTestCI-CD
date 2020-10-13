@@ -2,13 +2,13 @@ version: "3.3"
 
 services:
   db:
-  container_name: database
-  ports:
-    - 5432:5432
-  image: postgres
-  environment:
-    POSTGRES_PASSWORD: example
-  restart: always
+    container_name: database
+    ports:
+      - 5432:5432
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: example
+    restart: always
 
   web:
     image: docker.pkg.github.com/sharunovevgeny/apifortestci-cd/api:latest
