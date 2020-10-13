@@ -16,7 +16,7 @@ jobs:
       - name: Log in to GitHub Packages
         run: docker login docker.pkg.github.com -u SharunovEvgeny -p ${{ secrets.GITHUB_TOKEN }}
       - name: Pull images
-        run: docker push docker.pkg.github.com/sharunovevgeny/apifortestci-cd/api:latest|| true
+        run: docker pull docker.pkg.github.com/sharunovevgeny/apifortestci-cd/api:latest|| true
       - name: Build images
         run: docker-compose -f docker-compose.ci.yml build
       - name: Push images
