@@ -38,9 +38,7 @@ jobs:
           ssh -q -t -i "$HOME/.ssh/id_rsa" \
               -o UserKnownHostsFile=/dev/null \
               -o StrictHostKeyChecking=no root@45.144.64.69
-          scp -p $HOME/.ssh/id_rsa.pub root@45.144.64.69:
-          ssh root@45.144.64.69
-          host$ cat id_rsa.pub >> ~/.ssh/authorized_keys
+          scp -p $HOME/.ssh/id_rsa.pub root@45.144.64.69
       - name: Print Hellosft
         run : |
           echo "dса"
