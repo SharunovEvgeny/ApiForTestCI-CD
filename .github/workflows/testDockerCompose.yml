@@ -29,7 +29,7 @@ jobs:
           
       - name: Print Hello Messadwddddgrffgfgfdvfsfdft
         run : |
-          echo "dfdfdfddgffgfsffggdfdса"
+          echo "dggdfdса"
       - name: Deploy to Docker Host
         uses: wshihadeh/docker-deployment-action@v1
         with:
