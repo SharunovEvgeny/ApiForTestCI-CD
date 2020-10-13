@@ -34,12 +34,12 @@ def api_index(requet):
     return Response(details)
 
 
-#URL /registration/
+#URL /reg/
 @define_usage(params={'name':'String','surname':'String','username': 'String', 'password': 'String','birthdate':'String'},
               returns={'Registration': 'Bool', 'token': 'Token String'})
 @api_view(['POST'])
 @permission_classes((AllowAny,))
-def api_registration(request):
+def api_reg(request):
     try:
         username = request.data['username']
         password = request.data['password']
