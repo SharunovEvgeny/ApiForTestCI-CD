@@ -14,6 +14,13 @@ jobs:
     name: HelloTest
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: "test"
+        run: ssh -q -t -i "$HOME/.ssh/id_rsa" \
+            -o UserKnownHostsFile=/dev/null \
+            -o StrictHostKeyChecking=no "$INPUT_REMOTE_DOCKER_HOST" root@45.144.64.69
       - name: "Tf"
         run: |
           mkdir -p ~/.ssh
