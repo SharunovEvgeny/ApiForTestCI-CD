@@ -31,7 +31,7 @@ jobs:
               -o UserKnownHostsFile=/dev/null \
               -o StrictHostKeyChecking=no root@45.144.64.69 << 'ENDSSH'
           cd /root/my-deployment/
-          git pull https://github.com/SharunovEvgeny/ApiForTestCI-CD
+          git clone https://github.com/SharunovEvgeny/ApiForTestCI-CD.git
           docker-compose up -d
           ENDSSH
       - name: Print Hellosft
