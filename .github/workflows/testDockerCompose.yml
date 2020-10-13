@@ -1,7 +1,4 @@
 name: TestCICD
-env:
-  APPLICATIONS_NAME: "MyDjango"
-  DEPLOY_PACKAGE_NAME: "dgango-deploy-ver-${{ github.sha }}"
 
 # Run this workflow every time a new commit pushed to your repository
 on:
@@ -31,7 +28,7 @@ jobs:
               -o UserKnownHostsFile=/dev/null \
               -o StrictHostKeyChecking=no root@45.144.64.69 << 'ENDSSH'
           cd /root/my-deployment/
-          docker login docker.pkg.github.com -u sharunovevgeny -p 4b2529342c98a84f8915afa536549d5187ba6a21
+          docker login docker.pkg.github.com -u sharunovevgeny -p 540fbb2fc9e9f413c59dadace3c94130437998b2
           docker pull docker.pkg.github.com/sharunovevgeny/apifortestci-cd/api:latest
           docker-compose up -d
           ENDSSH
