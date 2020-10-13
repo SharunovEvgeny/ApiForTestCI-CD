@@ -25,35 +25,10 @@ jobs:
           eval $(ssh-agent)
           ssh-add "$HOME/.ssh/id_rsa"
           echo "Add known hossts"
-          sudo cat /etc/ssh/ssh_known_hosts
           sudo printf '%s %s\n' "root@45.144.64.69" "${{ secrets.DOCKER_SSH_PUBLIC_KEY }}" > sudo /etc/ssh/ssh_known_hosts
-          sudo cat /etc/ssh/ssh_known_hosts
           ssh -q -t -i "$HOME/.ssh/id_rsa" \
               -o UserKnownHostsFile=/dev/null \
               -o StrictHostKeyChecking=no root@45.144.64.69
-          sudo scp -p /etc/ssh/ssh_known_hosts root@45.144.64.69
-          echo "hgd"
-          ssh root@45.144.64.69 -t
       - name: Print Hellosft
         run : |
           echo "dса"
-      - name: Deploy to Docker Host
-        uses: wshihadeh/docker-deployment-action@v1
-        with:
-          remote_docker_host: root@45.144.64.69
-          ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
-          ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
-          deployment_mode: docker-compose
-          deploy_path: /root/my-deployment
-          args: up -d
-          pre_deployment_command_args: 'bundle exec rake db:migrate'
-          docker_prune: 'true'
-          pull_images_first: 'true'
-  my_tweest:
-    name: HelloTest2
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print Hellgrgfgfdvfsfdft
-        run : sudo cat /etc/ssh/ssh_known_hosts
-    
-  
